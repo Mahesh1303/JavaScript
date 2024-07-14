@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with Chai Aur code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+
+    <ul>
+        <li>Javascript</li>
+        <li>python</li>
+
+    </ul>
+    
+</body>
+<script>
+    function addlang(language){
+          const li=  document.createElement('li')
+          li.innerHTML=language
+          document.querySelector('ul').appendChild(li)
+            
+
+    }
+
+    addlang("typescript")
+    addlang( "java")
+
+    // const arr=["ruby","go","c++"]
+    // arr.forEach(element => { addlang(element)
+        
+    // });
+
+//  removing last element
+
+
+    const lastli=document.querySelector("li:last-child")
+    console.log(lastli)
+    lastli.remove()
+    
+</script>
+
+</html>
+
+

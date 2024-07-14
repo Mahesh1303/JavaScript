@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM   </title>
+    <style>
+        .bg-black{
+            background-color: rgb(59, 52, 52);
+            color: bisque;
+        }
+        
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM with chai aur code </h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <h1>Lorem ipsum dolor sit amet 1.</h1>
+    <h1>Lorem ipsum dolor sit amet. 2</h1>
+    <h1>Lorem ipsum dolor sit amet. 3</h1>
+    <h1>Lorem ipsum dolor sit amet. 4</h1>
+
+
+    <ul>
+        <li  class="list-ul"> Link 1 </li>
+        <li  class="list-ul"> link 2 </li>
+        <li  class="list-ul"> link 3 </li>
+    </ul>
+</body>
+</html>
+
+
+<!-- so we have different attributes which are associated with the doc -->
+ <!-- we can manipulate this in html form through  browser
+ console in document form
+ 
+    document.getElementById('title_name')
+    we can 
+    store it in a variable
+
+    const title = document.getElementById('title_name')
+    can add styling to that 
+
+    title.style.backgroundColor="green"
+
+
+
+ -->
+
+
+ <!-- 
+ Innertext  ,textContent,InnerHtml
+ 
+ title.InnerText   :   this will show only visible parts of the html
+ title.textcontent :   this will show the visible + invisible text in the html
+
+ title.innerHTML   :    this will show the html written in that title
+ 
+ 
+ -->
+
+
+
+ <!-- QuerySelectors
+ 
+    document.queryselector(h1):selects the first h1 tag
+    document.queryselector(#id_name):selects first id
+    document.queryselector(.class_name):selects the class name
+    
+
+    document.queryselector('ul')
+
+    const att=document.queryselector('ul')
+    att.queryselector('li') this will select first link
+
+    const li=att.queryselector('li')
+    li.style.color="orange"  first ul first li to change color
+
+
+
+
+
+
+    ....QuerySelectorAll 
+
+    document.getquerySelectorAll('li')  this will return all ul tags in html
+
+    const list1=document.getquerySelectorAll('li')
+    
+    to manipulate this it is like a special array of node we need to give index
+
+    list1[0].style.color="yellow" 
+
+    or use for each
+
+    list1.foreach( (list) => list.style="orange" )
+
+
+
+
+    class name dont have any loops avalable
+
+        document.getElementByClass("class_name")
+
+        to convert any special array type to normal array we can use array.from approach
+
+        const arr1=array.from(document.getElementByClass("class-name"))
+        arr1.foreach(( list ) => list.style.color="green  class="list-ul"")
+
+ -->
+  
