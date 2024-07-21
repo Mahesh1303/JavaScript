@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+    <li>0 (UNSENT): The request has not been initialized.</li>
+    <li>1 (OPENED): The request has been set up.</li>
+    <li>2 (HEADERS_RECEIVED): The headers have been received.</li>
+    <li>3 (LOADING): The response is being received.</li>
+    <li>4 (DONE): The response is complete.</li>
+    </ul>
+    
+
+    <p>0 (UNSENT):
+
+        The XMLHttpRequest object has been created, but the open() method hasn't been called yet.</p>
+    <p>1 (OPENED):
+
+        The open() method has been called. This is the state where you can set request headers and call the send() method to start the request.</p>
+    <p>
+        2 (HEADERS_RECEIVED):
+
+The send() method has been called, and the headers and status are available. The response headers have been received from the server.
+    </p>
+    <p>
+        3 (LOADING):
+
+        The response body is being received. The data is being downloaded, but it is not yet complete.
+    </p>
+    <p>
+        4 (DONE):
+
+        The request is complete. The entire response has been received. This is the state where you can access the response data.     
+    </p>
+
+    <br>
+    <p>
+        The 200 Status Code
+        The 200 status code specifically means "OK" and is part of the 2xx category. 
+        
+    </p>
+    <span>
+        It indicates that the request was successfully received, understood, and accepted by the server, 
+        and the requested resource is being returned in the response.
+    </span>
+    <hr>
+    <p>
+        Using xhr.status === 200
+In the context of XMLHttpRequest, checking xhr.status === 200 ensures that the request was successful and the server returned a valid response.
+ <p> check is crucial for confirming that the response data can be used as expected.</p>
+    </p>
+
+    <button id="try"> Try this</button>
+</body>
+<script>
+    const xhr=new XMLHttpRequest
+    // console.log(xhr.readyState)//indicates 0 that object has been created but open has not been called
+    xhr.open('GET','https://api.github.com/users/Mahesh1303') // sending reqest this is where open has been called
+    // console.log(xhr.readyState)
+    // console.log(xhr.readyState)
+    
+    xhr.onreadystatechange=()=>{
+        console.log(xhr.readyState)
+        if(xhr.readyState===4){
+        // //     const ele= document.getElementById('try')
+        // //     ele.addEventListener('click',()=>{
+        // //         document.body.style.backgroundColor='#212121'
+        // // //         document.body.style.color='white'
+        //       const xt=JSON.parse(xhr.responseText)
+        //     //   every time we get a response from a url it is in the form of string 
+        //     // conver this into anobject
+        //     //   console.log(xt.id)
+        //         console.log(xt)
+                
+            }
+            
+            
+            
+         }
+     //the on ready state will show case all the continuosly changing request state
+    xhr.send()
+
+    
+</script>
+</html>

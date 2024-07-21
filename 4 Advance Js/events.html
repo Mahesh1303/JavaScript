@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body>
+    <h1>This is a page</h1>
+    <ul id="buttons">
+        <button id="link1">link1</button>
+        <button id="link2">link2</button>
+        <button id="link3">link3</button>
+        <button id="link4">link4</button>
+        <!-- <button id="link1" onclick="alert('link1 clicked')">link1</button> there are many ways to listen to an event this is one 
+         method bu this is not suitable -->
+        <li id="google"> <a href="google.com">google</a></li>
+    </ul>
+</body>
+<script>
+    // document.getElementById('link1').onclick=() =>{alert('link1 clicked')} this is also a way but not prefered
+    // document.getElementById('link1').addEventListener('click',function(){
+    //     alert('link1 clicked')     //adding event listener is the best prefered way as for modern tech becz
+    //     // it is helpful to add multiple events
+    // },false)
+
+
+    // event propagation basicall there are two types of events bubble and capture
+    // bubble when parameeter is false and capture when true mostly we deal with bubbble events
+
+    // // propagation in events
+    document.getElementById('buttons').addEventListener('click',function(){console.log('clicked buttons')},false)
+    // document.getElementById('link3').addEventListener('click',function(){console.log('clicked button no. 3')},false)
+    // this will result in first printing the button 3 and then the clicked buttons ie bubbling up from inside to outside
+    // ie due to the false /bubble
+    
+    // document.getElementById('buttons').addEventListener('click',function(){console.log('clicked buttons')},true)
+    // document.getElementById('link3').addEventListener('click',function(){console.log('clicked button no. 3')},true)
+    // this is capturing mode result in the sequential execution
+
+
+    // // to stop event bubble propagation after the execution we can use stp propagation method
+    
+    // document.getElementById('buttons').addEventListener('click',function(){console.log('clicked buttons')},false)
+    // document.getElementById('link3').addEventListener('click',function(e)
+    // {
+    //     console.log('clicked button no. 3')
+    //     e.stopPropagation();
+    // },false)
+    
+    // prevent default is use for preventing the links from opening new website
+    // document.getElementById('google').addEventListener('click',(e)=>{
+    //     console.log("clicked google link")
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // })
+
+
+    // target events and removeit method to remove node 
+
+    // // we want to make disappear the buttons on which we click
+    // document.querySelector('#buttons').addEventListener('click',(e)=>{
+    //     console.log(e.target)
+    //     let node=e.target
+    //     node.remove()
+    // })
+    // for situation where the parent node is the main node use if else cases use tagName Attribute
+    // document.querySelector('#buttons').addEventListener('click',(e)=>{
+    //     console.log(e.target.tagName)
+    //     e.preventDefault();
+    // }) use tag name to find that the tag is button
+</script>
+</html>
