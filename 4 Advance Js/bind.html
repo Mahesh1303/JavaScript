@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button>
+        Click me
+    </button>
+</body>
+<script>
+    class Tr1{
+        constructor(){
+            this.server="server";
+            this.id="id"
+            document.querySelector('button').addEventListener('click',this.clic.bind(this))
+        }
+        clic(){
+            console.log("Button was clicked")
+            console.log(this.id)
+        }
+    }
+    new Tr1()
+</script>
+</html>
+<!-- use bind this because it will bind all the this attributes to this button that is u can operate with this thing -->
